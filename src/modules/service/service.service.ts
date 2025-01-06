@@ -2,20 +2,20 @@ import { PaginatedQueryBuilder } from "@/builders";
 import { AppError } from "@/errors";
 import httpStatus from "http-status";
 import { z } from "zod";
-import Feedback from "./feedback.model";
-import feedbackValidation from "./feedback.validation";
+import Service from "./service.model";
+import serviceValidation from "./service.validation";
 
 const create = async (
-  payload: z.infer<typeof feedbackValidation.create>["body"],
+  payload: z.infer<typeof serviceValidation.create>["body"],
 ) => {
-  return Feedback.create({ ...payload });
+  return Service.create({ ...payload });
 };
 
 const getAll = async (query: Record<string, unknown>) => {
   const queryBuilder = new PaginatedQueryBuilder(
-    Feedback.find(),
+    Service.find(),
     query,
-    "/api/v1/feedbacks",
+    "/api/v1/services",
   );
 
   const result = await queryBuilder
@@ -31,31 +31,31 @@ const getAll = async (query: Record<string, unknown>) => {
 
 const updateOne = async (
   id: string,
-  payload: z.infer<typeof feedbackValidation.update>["body"],
+  payload: z.infer<typeof serviceValidation.update>["body"],
 ) => {
-  const updatedFeedback = await Feedback.findByIdAndUpdate(
+  const updatedService = await Service.findByIdAndUpdate(
     id,
     { ...payload },
     { new: true },
   );
 
-  if (!updatedFeedback) {
-    throw new AppError(httpStatus.NOT_FOUND, "Feedback not found");
+  if (!updatedService) {
+    throw new AppError(httpStatus.NOT_FOUND, "Service not found");
   }
 
-  return updatedFeedback;
+  return updatedService;
 };
 
 const deleteOne = async (id: string) => {
-  const feedback = await Feedback.findByIdAndDelete(id, {
+  const service = await Service.findByIdAndDelete(id, {
     new: true,
   });
 
-  if (!feedback) {
-    throw new AppError(httpStatus.NOT_FOUND, "Feedback not found");
+  if (!service) {
+    throw new AppError(httpStatus.NOT_FOUND, "Service not found");
   }
 
-  return feedback;
+  return service;
 };
 
 export default {
