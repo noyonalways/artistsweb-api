@@ -1,5 +1,4 @@
-import PaginatedQueryBuilder from "@/builders/PaginatedQueryBuilder";
-import SingleDocQueryBuilder from "@/builders/SingleDocQueryBuilder";
+import { PaginatedQueryBuilder, SingleDocQueryBuilder } from "@/builders";
 import { AppError } from "@/errors";
 import httpStatus from "http-status";
 import { z } from "zod";

@@ -1,4 +1,5 @@
 import authRouter from "@/modules/auth/auth.routes";
+import feedbackRouter from "@/modules/feedback/feedback.routes";
 import workRouter from "@/modules/work/work.routes";
 import { Router } from "express";
 
@@ -12,6 +13,10 @@ const moduleRoutes: TModuleRoute[] = [
   {
     path: "/works",
     routes: workRouter,
+  },
+  {
+    path: "/feedbacks",
+    routes: feedbackRouter,
   },
 ];
 
