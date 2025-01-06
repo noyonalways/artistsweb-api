@@ -13,6 +13,7 @@ program
 
     // Define the file names you want to generate
     const files = [
+      { name: `${module}.interface.ts`, content: "/* Interface content */" },
       { name: `${module}.routes.ts`, content: "/* Routes content */" },
       { name: `${module}.controller.ts`, content: "/* Controller content */" },
       { name: `${module}.service.ts`, content: "/* Service content */" },
