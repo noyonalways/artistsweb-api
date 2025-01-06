@@ -27,5 +27,5 @@ const workSchema = new Schema<IWork>(
   },
 );
 
-const Work = model<IWork>("work", workSchema);
+const Work = model<IWork>("Work", workSchema);
 export default Work;

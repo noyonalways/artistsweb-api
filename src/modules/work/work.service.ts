@@ -30,7 +30,11 @@ const getAll = async (query: Record<string, unknown>) => {
 };
 
 const getOne = async (id: string, query: Record<string, unknown>) => {
-  const work = await new SingleDocQueryBuilder(Work, id, query).execute();
+  const work = await new SingleDocQueryBuilder(
+    Work,
+    { _id: id },
+    query,
+  ).execute();
 
   if (!work) {
     throw new AppError(httpStatus.NOT_FOUND, "Work not found");

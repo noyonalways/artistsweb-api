@@ -27,5 +27,5 @@ const feedbackSchema = new Schema<TFeedback>(
   { timestamps: true },
 );
 
-const Feedback = model<TFeedback>("feedback", feedbackSchema);
+const Feedback = model<TFeedback>("Feedback", feedbackSchema);
 export default Feedback;

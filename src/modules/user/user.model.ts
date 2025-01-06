@@ -75,5 +75,5 @@ userSchema.statics.verifyToken = function (token: string, secret: string) {
   return jwt.verify(token, secret);
 };
 
-const User = model<TUser, IUserModel>("user", userSchema);
+const User = model<TUser, IUserModel>("User", userSchema);
 export default User;

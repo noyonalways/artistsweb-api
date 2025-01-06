@@ -1,4 +1,5 @@
 import authRouter from "@/modules/auth/auth.routes";
+import caseStudyRouter from "@/modules/caseStudy/caseStudy.routes";
 import feedbackRouter from "@/modules/feedback/feedback.routes";
 import serviceRouter from "@/modules/service/service.routes";
 import workRouter from "@/modules/work/work.routes";
@@ -22,6 +23,10 @@ const moduleRoutes: TModuleRoute[] = [
   {
     path: "/services",
     routes: serviceRouter,
+  },
+  {
+    path: "/case-studies",
+    routes: caseStudyRouter,
   },
 ];
 

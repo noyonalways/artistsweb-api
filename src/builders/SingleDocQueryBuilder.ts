@@ -8,19 +8,19 @@ class SingleDocQueryBuilder<T extends Document> {
 
   constructor(
     private model: Model<T>,
-    private id: string,
+    private filter: Record<string, unknown>,
     private options: Record<string, unknown>,
   ) {
-    this.query = this.model.findById(this.id);
+    this.query = this.model.findOne(filter);
   }
 
   // Set fields to select, accepting an array of fields
-  selectFields(defaultFields: string[]) {
+  selectFields(defaultFields?: string[]) {
     const fieldsToSelect = this.options.expand
       ? ""
       : this.options.fields
         ? (this.options.fields as string).split(",").join(" ")
-        : defaultFields.join(" ");
+        : defaultFields && defaultFields.join(" ");
 
     this.query = this.query.select(fieldsToSelect);
     return this;
@@ -28,19 +28,25 @@ class SingleDocQueryBuilder<T extends Document> {
 
   // Add populate for specific fields, accepts multiple fields
   populate(fields: string[]) {
-    if (this.options.expand) {
-      this.populateOptions = fields;
+    if (this.options.expand === false) {
+      this.populateOptions = [];
     } else if (this.options.fields) {
       const requestedFields = (this.options.fields as string).split(",");
       this.populateOptions = fields.filter((field) =>
         requestedFields.includes(field),
       );
+    } else {
+      this.populateOptions = fields;
     }
     return this;
   }
 
   // Execute the query
   async execute(): Promise<T | null> {
+    if (this.options.expand === "false") {
+      this.populateOptions = [];
+    }
+
     // Populate if necessary
     if (this.populateOptions.length > 0) {
       this.populateOptions.forEach((field) => {
