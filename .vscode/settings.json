@@ -8,6 +8,10 @@
     "source.organizeImports": "always"
   },
   "files.autoSave": "off",
-  "cSpell.words": ["Artistsweb", "Noyon", "Rahman"],
+  "cSpell.words": [
+    "Artistsweb",
+    "Noyon",
+    "Rahman"
+  ],
   "prettier.prettierPath": "./node_modules/prettier"
 }

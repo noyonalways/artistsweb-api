@@ -7,3 +7,6 @@ declare global {
     }
   }
 }
+
+// This file should not export anything
+export {};

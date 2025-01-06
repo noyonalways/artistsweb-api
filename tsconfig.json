@@ -23,6 +23,9 @@
       ]
     }
   },
+  "files": [
+    "./src/interface/index.d.ts"
+  ],
   "include": [
     "src/",
   ],

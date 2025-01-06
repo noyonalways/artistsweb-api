@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import config from "../config";
+import seedAdmin from "./seed";
 
 const connectToDatabase = async () => {
   try {
@@ -8,6 +9,8 @@ const connectToDatabase = async () => {
     });
     // eslint-disable-next-line no-console
     console.log("Connected to database".cyan);
+
+    await seedAdmin();
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error("Failed to connect to the database", err);

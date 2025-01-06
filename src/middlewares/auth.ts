@@ -1,9 +1,8 @@
 import config from "@/config";
+import { TUserRole } from "@/modules/user/user.interface";
 import { catchAsync, sendResponse } from "@/utils";
 import httpStatus from "http-status";
 import jwt, { JwtPayload } from "jsonwebtoken";
-
-type TUserRole = "admin" | "user";
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req, res, next) => {

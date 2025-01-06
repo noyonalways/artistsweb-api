@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
-import { TErrorMessages, TGenericErrorResponse } from "../interface/error";
+import {
+  TErrorSources,
+  TGenericErrorResponse,
+} from "../interface/error.interface";
 
 interface MongooseDuplicateKeyError extends mongoose.Error {
   code: number;
@@ -14,7 +17,7 @@ const handleMongooseDuplicateIdError = (
   const extractedMessage = match && match[1];
 
   const statusCode = 400;
-  const errorMessages: TErrorMessages = [
+  const errorSources: TErrorSources = [
     {
       path: Object.keys(error?.keyPattern)[
         Object.keys(error?.keyPattern).length - 1
@@ -26,7 +29,7 @@ const handleMongooseDuplicateIdError = (
   return {
     statusCode,
     message: "Duplicate Entry",
-    errorMessages,
+    errorSources,
   };
 };
 
