@@ -20,9 +20,71 @@
 
 This project is a frontend application for Artistsweb, designed to showcase artists and their works. It provides a user-friendly interface and integrates with the backend API for dynamic content.
 
-### [Artistsweb Live](https://artistsweb.vercel.app/)
+### [Artistsweb Frontend Live](https://artistsweb.vercel.app/)
 
-### [Artistsweb API](https://artistsweb-api.vercel.app/)
+### [Artistsweb API Live](https://artistsweb-api.vercel.app/)
+
+## Local Setup Guide
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/noyonalways/artistsweb-api.git
+   cd artistsweb-api
+   ```
+
+2. Install dependencies:
+
+   Using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Using yarn:
+
+   ```bash
+   yarn install
+   # or simply
+   yarn
+   ```
+
+3. Create a `.env` file in the root directory and configure the following environment variables:
+
+   ```env
+   # App configuration
+   PORT=5000                        # Your preferred port number
+   DATABASE_URL=mongodb://...       # Your MongoDB connection string
+   NODE_ENV=development             # development/production
+
+   # JWT configuration
+   JWT_ACCESS_TOKEN_SECRET=your_secret_key
+   JWT_ACCESS_TOKEN_EXPIRES_IN=1d
+
+   # Admin credentials
+   ADMIN_EMAIL=admin@example.com
+   ADMIN_PASSWORD=your_admin_password
+   ADMIN_NAME=Admin
+
+   # Bcrypt configuration
+   SALT_ROUNDS=10
+   ```
+
+4. Start the development server:
+
+   Using npm:
+
+   ```bash
+   npm run dev
+   ```
+
+   Using yarn:
+
+   ```bash
+   yarn dev
+   ```
+
+The API will be available at `http://localhost:5000` (or your configured PORT).
 
 ## Frontend Repository
 
