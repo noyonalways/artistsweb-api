@@ -8,17 +8,25 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img src="https://i.ibb.co/c64q254/noyon-logo-dark.png" alt="Logo" width="80" height="80" />
+    <img src="./public/logo.png" alt="Logo" width="80" height="80" style="border-radius:50%;" />
     <h3 align="center">
-        <a href="https://github.com/noyonalways/artistsweb-api" target="_blank" >
+        <a href="https://artistsweb-api.vercel.app" target="_blank" >
             Artistsweb API
         </a>
     </h3>
 </p>
 
-## Description:
+## Description
 
-Artistsweb API
+This project is a frontend application for Artistsweb, designed to showcase artists and their works. It provides a user-friendly interface and integrates with the backend API for dynamic content.
+
+### [Artistsweb Live](https://artistsweb.vercel.app/)
+
+### [Artistsweb API](https://artistsweb-api.vercel.app/)
+
+## Frontend Repository
+
+- Frontend Repository: [Artistsweb Frontend](https://github.com/noyonalways/artistsweb-frontend)
 
 ## Contact
 

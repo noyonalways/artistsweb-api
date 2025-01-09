@@ -8,7 +8,7 @@ const create = catchAsync(async (req, res) => {
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.CREATED,
-    message: "Feedback created successfully",
+    message: "Hero Section Created successfully",
     data: result,
   });
 });
@@ -19,7 +19,7 @@ const get = catchAsync(async (req, res) => {
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: "Feedback retrieved successfully",
+    message: "Hero Section data retrieved successfully",
     data: result,
   });
 });
@@ -30,7 +30,7 @@ const update = catchAsync(async (req, res) => {
   sendResponse(res, {
     success: true,
     statusCode: httpStatus.OK,
-    message: "Feedback updated successfully",
+    message: "Hero Section updated successfully",
     data: result,
   });
 });
